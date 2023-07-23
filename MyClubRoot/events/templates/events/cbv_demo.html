@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title|default:'UNtited PAGE'}}{% endblock title %}
+
+{% block content %} 
+
+{% if title %} 
+    <h1>{{ title }}</h1> 
+{% else %} 
+    <p>Nothing ro see here</p> 
+{% endif %}
+{% endblock content %}
