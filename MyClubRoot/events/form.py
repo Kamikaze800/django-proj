@@ -4,9 +4,10 @@ from .models import Venue
 
 class VenueForm(ModelForm):
     required_css_class = 'required'
-    class Meta:
-        model = Venue
-        fields = '__all__'
+    # добавляет css к теребуемым полям
+    class Meta: # передача метаданных
+        model = Venue # модель на которой основана форма
+        fields = '__all__' # поля для отображения
 
     def clean(self):
         cleaned_data = super().clean()
