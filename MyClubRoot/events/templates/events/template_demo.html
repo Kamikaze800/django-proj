@@ -31,20 +31,20 @@
     </p>
     {% endfor %}
 
-    
+
 
     <h2>my custom inclusion_tag</h2>
     {% announcements %}
 
     <h2>my custom simple tag</h2>
     {% create_date today %}
-    
+
     <h2>Custom Tags and Filters</h2>
     {{ 100|reverse}} <br>
 
     <h2>Prosto huy - default</h2>
     {{ some_nonexisting_value|default:'Default value' }}
-    
+
     <h2>The Humanize Filters</h2>
     из '1' получил one <br>
     {{ 1|apnumber }}, {{ 5|apnumber }}, {{ 12|apnumber }} <br>
@@ -72,7 +72,7 @@
 
 
     <h2>Encoding URLs</h2>для вставки ссылок
-    {{ "https://poe.com/Claude-instant"|urlencode}} 
+    {{ "https://poe.com/Claude-instant"|urlencode}}
 
     <h2>Unordered Lists</h2>
     <ul>
@@ -130,8 +130,7 @@
     <p><strong></strong></p>
     {{ anothervar|get_digit:1}} <br>
     {{ anothervar|get_digit:0}} <br>
-    {{ "hello"|get_digit:2}} 
-
+    {{ "hello"|get_digit:2}}
     <h2>Format flating point number</h2>
     {{ 3.1234567|floatformat:3}}
 
@@ -145,7 +144,7 @@
 
     <h2>Divisibleby</h2>
     {{anothervar|divisibleby:"4"}} <br>
-    {{anothervar|divisibleby:"3"}} 
+    {{anothervar|divisibleby:"3"}}
 
     <h2>Sorting Dictionaries</h2>
     {{ best_bands|dictsort:"name"}} <br>
@@ -209,16 +208,16 @@
     <img src="{% static 'logo3.jpg' %}" height="300px" width="{% widthratio 33 100 200 %}" alt="">
 
    <h2>With tag</h2>
-   {% with total_items=color_list|length %} 
-    The list has {{ total_items }} item{{ total_items|pluralize}} 
+   {% with total_items=color_list|length %}
+    The list has {{ total_items }} item{{ total_items|pluralize}}
     {% endwith %}
-    <hr />   
+    <hr />
 
     <h2>Add Filter</h2>
     {{ somevar|add:'12'}} <br>
     {{ somevar|add:anothervar }} <br>
 
-    
+
 
 </body>
 </html>

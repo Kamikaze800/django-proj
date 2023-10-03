@@ -58,6 +58,7 @@ def all_events(request):
 
 
 def index(request, year=date.today().year, month=date.today().month):
+    
     # usr = request.user
     # ses = request.session
     # path = request.path_info

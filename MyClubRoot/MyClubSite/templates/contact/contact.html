@@ -12,6 +12,7 @@
     </p>
 {% else %}
     <form action="" method="post" novalidate>
+{#    novalidate говорит браузеру не проверять поля#}
         <table>
             {{ form.as_table }}
             <tr>

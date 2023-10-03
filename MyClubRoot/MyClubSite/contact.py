@@ -9,7 +9,7 @@ class ContactForm(forms.Form):
     yourname = forms.CharField(max_length=100, label='Your Name')
     email = forms.EmailField(required=False, label = 'Your Email')
     subject = forms.CharField(max_length=100)
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea) # позволяет вводить много текста
 
 def contact(request):
     submitted = False
@@ -17,6 +17,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
+            # cleaned_data нормализует данные и созранаяет их в словарь
             # assert False
             con = get_connection('django.core.mail.backends.console.EmailBackend')
             send_mail(
@@ -26,6 +27,8 @@ def contact(request):
                 ['siteowner@example.com'],
                 connection=con
             )
+            # по факту это готовая рассылка, токо надо изменить серверное приложение
+            # и в settings добавить настройки почтового сервера
             return HttpResponseRedirect('/contact?submitted=True')
     else:
         form = ContactForm()
